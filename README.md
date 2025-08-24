@@ -30,7 +30,7 @@ A modern full-stack application template with real-time capabilities, ready to b
 ## 📁 Project Structure
 
 ```
-├── server/          # Backend API
+├── server/         # Backend API
 ├── web/            # Frontend React
 ├── docker/         # Docker configurations
 └── package.json    # Workspace root
