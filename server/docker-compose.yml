@@ -1,5 +1,5 @@
 services:
-  nlw-agents-pg:
+  my-database:
     # This is the database for the project, it's a vector database, most cases other databases will be used.
     image: pgvector/pgvector:pg17
     environment:

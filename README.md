@@ -72,17 +72,36 @@ PORT=3333
 DATABASE_URL=postgresql://docker:docker@localhost:5432/agents
 ```
 
-4. **Start the database**
+4. **Configure database type (IMPORTANT)**
+
+Before starting the database, consider changing the database image in `server/docker-compose.yml` based on your project needs:
+
+```yaml
+# Current: Vector database for AI/ML projects
+image: pgvector/pgvector:pg17
+
+# Alternative: Standard PostgreSQL for most applications
+image: postgres:17
+
+# Alternative: MySQL for different requirements
+image: mysql:8.0
+```
+
+The current setup uses `pgvector/pgvector:pg17` which is a PostgreSQL extension for vector operations, ideal for AI/ML projects. For standard applications, consider using regular PostgreSQL.
+
+5. **Start the database**
 
 ```bash
 docker-compose up -d
 ```
 
-5. **Run migrations**
+6. **Setup and seed the database**
 
 ```bash
 yarn db:seed
 ```
+
+**Note:** If you encounter database connection issues after renaming the Docker service, make sure your `DATABASE_URL` in `.env` matches the service name in `docker-compose.yml`.
 
 ### Development
 
@@ -105,6 +124,25 @@ yarn dev
 - `yarn format` - Format code
 - `yarn lint` - Run linter
 - `yarn check` - Run formatting and linting
+
+### Database Usefull Commands
+
+**Server directory (`cd server`):**
+
+**Required for setup:**
+
+- `docker-compose up -d` - Start database container
+- `yarn db:seed` - Create tables and seed database with sample data
+
+**Development workflow:**
+
+- `npx drizzle-kit generate` - Generate migrations when schema changes
+- `npx drizzle-kit migrate` - Run migrations (alternative to push)
+- `npx drizzle-kit studio` - Open database GUI (requires DATABASE_URL)
+
+**Utility:**
+
+- `docker-compose down` - Stop database container
 
 ## 🏗️ Project Patterns
 
