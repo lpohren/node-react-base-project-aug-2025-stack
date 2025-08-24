@@ -19,7 +19,7 @@ A modern full-stack application template with real-time capabilities, ready to b
 - **Tailwind CSS** - Utility-first CSS framework
 - **React Router** - Routing for React
 - **TanStack Query** - Server state management
-- **Radix UI** - Accessible components
+- **shadcn/ui** - Re-usable components built with Radix UI and Tailwind CSS
 
 ### Tools
 
