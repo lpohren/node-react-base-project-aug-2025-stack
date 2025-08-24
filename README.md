@@ -11,6 +11,7 @@ A modern full-stack application template with real-time capabilities, ready to b
 - **PostgreSQL** - Relational database
 - **Zod** - Schema validation
 - **TypeScript** - Programming language
+- **Docker** - Containerization
 
 ### Frontend
 
@@ -24,7 +25,6 @@ A modern full-stack application template with real-time capabilities, ready to b
 ### Tools
 
 - **Biome** - Linter and formatter
-- **Docker** - Containerization
 - **Yarn Workspaces** - Monorepo management
 
 ## 📁 Project Structure
@@ -32,7 +32,6 @@ A modern full-stack application template with real-time capabilities, ready to b
 ```
 ├── server/         # Backend API
 ├── web/            # Frontend React
-├── docker/         # Docker configurations
 └── package.json    # Workspace root
 ```
 
